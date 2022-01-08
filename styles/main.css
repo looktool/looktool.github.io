@@ -758,3 +758,16 @@ a {
   font-size: 16px;
   margin: 4px 8px;
 }
+
+      .sidebar .top-container .site-nav {
+        color: #fff3bf;
+      }
+    
+      .post-item .right .feature-container {
+        border-radius: 7px;
+      }
+    
+      body {
+        background: #c5f6fa;
+      }
+    
