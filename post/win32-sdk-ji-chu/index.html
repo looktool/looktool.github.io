@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Win32 SDK 基础 | looktool</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://looktool.github.io/favicon.ico?v=1641990143231">
+<link rel="stylesheet" href="https://looktool.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="一、windows 程序分类
+1、控制台程序
+windows的Dos程序，没有自己的窗口，需要借助Dos窗口进行用户交互，主函数：
+int main()
+{
+    return 0;
+}
+
+2、windows 窗口程序
+可见的window..." />
+    <meta name="keywords" content="learn" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://looktool.github.io">
+        <img src="https://looktool.github.io/images/avatar.png?v=1641990143231" class="site-logo">
+        <h1 class="site-title">looktool</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/looktool/" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      The Last But Not The Least
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://looktool.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Win32 SDK 基础</h2>
+            <div class="post-date">2022-01-12</div>
+            
+              <div class="feature-container" style="background-image: url('https://looktool.github.io/post-images/win32-sdk-ji-chu.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <h2 id="一-windows-程序分类">一、windows 程序分类</h2>
+<h3 id="1-控制台程序">1、控制台程序</h3>
+<p>windows的Dos程序，没有自己的窗口，需要借助Dos窗口进行用户交互，主函数：</p>
+<pre><code class="language-c++">int main()
+{
+    return 0;
+}
+</code></pre>
+<h3 id="2-windows-窗口程序">2、windows 窗口程序</h3>
+<p>可见的windows系统下的程序基本都属于这种，列入word、excel等等，主函数：</p>
+<pre><code class="language-c++">int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
+                     _In_opt_ HINSTANCE hPrevInstance,
+                     _In_ LPWSTR    lpCmdLine,
+                     _In_ int       nCmdShow)
+{...}
+</code></pre>
+<h3 id="3-动态链接库-dll">3、动态链接库 dll</h3>
+<p>依附于宿主程序调用执行，自己无法执行，宿主程序调用其中的接口后才会进内存，主函数：</p>
+<pre><code class="language-c++">BOOL APIENTRY DllMain( HMODULE hModule,
+                       DWORD  ul_reason_for_call,
+                       LPVOID lpReserved
+                     )
+{...}
+</code></pre>
+<h3 id="4-静态库程序-lib">4、静态库程序 lib</h3>
+<p>无入口函数，无法执行，也就无法进内存，宿主函数直接从硬盘上读取代码，然后复制代码副本到自己的进程中。</p>
+<h2 id="二-vc下编译工具分类">二、VC下编译工具分类</h2>
+<h3 id="1-编译器-clexe">1、编译器 CL.exe</h3>
+<p>作用是将源代码翻译成目标代码</p>
+<p>所在目录：</p>
+<p><code>C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe</code></p>
+<h3 id="2-连接器-linkexe">2、连接器 LINK.exe</h3>
+<p>作用是将目标代码、库连接生成最终文件。</p>
+<p>所在目录：</p>
+<p><code>C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\LINK.exe</code></p>
+<h3 id="3-资源编译器-rcexe">3、资源编译器 RC.exe</h3>
+<p>作用是将资源编译，最终通过连接器存入最终文件</p>
+<p>所在目录(vs2015下)：：</p>
+<p><code>C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Bin\x64\RC.exe</code></p>
+<h2 id="三-常见的vc的库">三、常见的VC的库</h2>
+<h3 id="1-kernel32dll">1、<code>kernel32.dll</code></h3>
+<p>提供了线程、进程、内存管理等核心的API</p>
+<h3 id="2-user32dll">2、<code>user32.dll</code></h3>
+<p>提供了窗口、消息等API</p>
+<h3 id="3-gdi32dll">3、<code>gdi32.dll</code></h3>
+<p>提供了绘图的API</p>
+<p>以上三种库的路径：</p>
+<p><code>C:\Windows\System32</code></p>
+<h2 id="四-vc下标准的头文件">四、VC下标准的头文件</h2>
+<h3 id="1-windefh">1、<code>windef.h</code></h3>
+<p><code>windows</code>的数据类型</p>
+<h3 id="2-winbaseh">2、<code>winbase.h</code></h3>
+<p>包含kernel32.dll所有API的声明</p>
+<h3 id="3-wingdih">3、<code>wingdi.h</code></h3>
+<p>包含所有<code>gdi32.dll</code>的API的声明</p>
+<h3 id="4-winuserh">4、<code>winuser.h</code></h3>
+<p>包含所有<code>user32.dll</code>的API的声明</p>
+<h3 id="5-winnth">5、<code>winnt.h</code></h3>
+<p>包含对<code>UNICODE</code>字符集的支持</p>
+<h3 id="6-windowsh">6、<code>windows.h</code></h3>
+<p>所有<code>windows</code>头文件的集合</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://looktool.github.io/tag/LEARN_N/" class="tag">
+                    learn
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://looktool.github.io/post/tips/">
+                  <h3 class="post-title">
+                    Tips
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>
