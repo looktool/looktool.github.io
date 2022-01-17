@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>文章归档 | looktool</title>
+<title>C_GAME_SNAKE | looktool</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,7 +18,13 @@
 
 
 
-    <meta name="description" content="The Last But Not The Least">
+    <meta name="description" content="头文件
+#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;Windows.h&gt;
+#include&lt;time...." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -92,60 +98,64 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          
+          <div class="post-detail">
+            <h2 class="post-title">C_GAME_SNAKE</h2>
+            <div class="post-date">2022-01-17</div>
+            
+            <div class="post-content" v-pre>
+              <h4 id="头文件">头文件</h4>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;Windows.h&gt;
+#include&lt;time.h&gt;
+</code></pre>
+<h4 id="宏定义">宏定义</h4>
+<pre><code class="language-c">#define SNAKE_NUM 500  //蛇的最大长度
+#define MAX_WEIGHT 40  //游戏背景宽
+#define MAX_HEIGHT 20	//游戏背景高
+</code></pre>
+<h4 id="数据结构">数据结构</h4>
+<pre><code class="language-c">enum DIR//记录方向
+struct Pos//坐标
+struct Snake//蛇
+struct Food//食物
+</code></pre>
+<h4 id="处理函数">处理函数</h4>
+<pre><code class="language-c">void makeFood()
+void isFood()
+void gameInit()
+void gameDraw()
+void snakeMove()
+void keyControl()
+int main(int agrc, char* argv[])
+</code></pre>
+<h4 id="功能描述">功能描述</h4>
+<ul>
+<li>利用控制台实现了利用输入控制蛇的方向移动以及进食</li>
+<li>尚未添加背景音乐,单向移动,触发音效等</li>
+</ul>
+<h4 id="源码部分">源码部分</h4>
+<blockquote>
+<p><a href="https://github.com/looktool/Blog">GitHub</a></p>
+</blockquote>
 
-          <h2 class="archives-title">文章归档</h2>
-          <div class="archives-container">
+            </div>
             
-              <h2 class="year" data-aos="fade-in" data-aos-delay="500">2022</h2>
-              
-                
-                  <article class="post">
-                    <a href="https://looktool.github.io/post/c_game_snake/">
-                      <h2 class="post-title">
-                        C_GAME_SNAKE
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://looktool.github.io/post/something-else/">
-                      <h2 class="post-title">
-                        something else
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://looktool.github.io/post/win32-sdk-ji-chu/">
-                      <h2 class="post-title">
-                        Win32 SDK 基础
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://looktool.github.io/post/tips/">
-                      <h2 class="post-title">
-                        Tips
-                      </h2>
-                    </a>
-                  </article>
-                
-              
             
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://looktool.github.io/post/something-else/">
+                  <h3 class="post-title">
+                    something else
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
           </div>
-
-          <div class="pagination-container">
-  
-  
-</div>
 
         </div>
       </div>

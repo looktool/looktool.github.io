@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://looktool.github.io</id>
     <title>looktool</title>
-    <updated>2022-01-15T06:34:04.867Z</updated>
+    <updated>2022-01-17T04:37:10.775Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://looktool.github.io"/>
     <link rel="self" href="https://looktool.github.io/atom.xml"/>
@@ -10,6 +10,20 @@
     <logo>https://looktool.github.io/images/avatar.png</logo>
     <icon>https://looktool.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, looktool</rights>
+    <entry>
+        <title type="html"><![CDATA[C_GAME_SNAKE]]></title>
+        <id>https://looktool.github.io/post/c_game_snake/</id>
+        <link href="https://looktool.github.io/post/c_game_snake/">
+        </link>
+        <updated>2022-01-17T03:08:58.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[something else]]></title>
+        <id>https://looktool.github.io/post/something-else/</id>
+        <link href="https://looktool.github.io/post/something-else/">
+        </link>
+        <updated>2022-01-15T06:34:16.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Win32 SDK 基础]]></title>
         <id>https://looktool.github.io/post/win32-sdk-ji-chu/</id>
