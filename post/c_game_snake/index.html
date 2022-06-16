@@ -1,109 +1,98 @@
+
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
+    
+<meta charset="utf-8" >
 
 <title>C_GAME_SNAKE | looktool</title>
+<meta name="description" content="The Last But Not The Least">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://looktool.github.io/favicon.ico?v=1646133798469">
+<link rel="shortcut icon" href="https://looktool.github.io/favicon.ico?v=1655371936936">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://looktool.github.io/styles/main.css">
 
 
 
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
 
 
-    <meta name="description" content="头文件
-#include&lt;stdio.h&gt;
-#include&lt;conio.h&gt;
-#include&lt;stdlib.h&gt;
-#include&lt;Windows.h&gt;
-#include&lt;time...." />
-    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://looktool.github.io">
-        <img src="https://looktool.github.io/images/avatar.png?v=1646133798469" class="site-logo">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://looktool.github.io">
+        <img class="avatar" src="https://looktool.github.io/images/avatar.png?v=1655371936936" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://looktool.github.io">
         <h1 class="site-title">looktool</h1>
       </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
     </div>
-    <div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
       
         
-          <a href="/" class="site-nav">
+          <a href="/" class="menu purple-link">
             首页
           </a>
         
       
         
-          <a href="/archives" class="site-nav">
+          <a href="/archives" class="menu purple-link">
             归档
           </a>
         
       
         
-          <a href="/tags" class="site-nav">
+          <a href="/tags" class="menu purple-link">
             标签
           </a>
         
       
         
-          <a href="/post/about" class="site-nav">
+          <a href="/post/about" class="menu purple-link">
             关于
           </a>
         
       
-    </div>
-  </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
         
-          <a class="social-link" href="https://github.com/looktool/" target="_blank">
-            <i class="fab fa-github"></i>
+          <a href="/river" class="menu purple-link">
+            Beta4.0
           </a>
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <div class="site-description">
-      The Last But Not The Least
-    </div>
-    <div class="site-footer">
-      Auto by <a href="http://wpa.qq.com/msgrd?v=3&uin=1684182365&site=qq&menu=yes" target="_blank">1684182365</a> | <a class="rss" href="https://looktool.github.io/atom.xml" target="_blank">RSS</a>
     </div>
   </div>
-</div>
+</transition>
 
 
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">C_GAME_SNAKE</h2>
-            <div class="post-date">2022-01-17</div>
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">C_GAME_SNAKE</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2022-01-17</span>
             
-            <div class="post-content" v-pre>
-              <h4 id="头文件">头文件</h4>
+          </div>
+          <div class="post-content">
+            <h4 id="头文件">头文件</h4>
 <pre><code class="language-c">#include&lt;stdio.h&gt;
 #include&lt;conio.h&gt;
 #include&lt;stdlib.h&gt;
@@ -140,31 +129,45 @@ int main(int agrc, char* argv[])
 <p><a href="https://github.com/looktool/Blog">GitHub</a></p>
 </blockquote>
 
-            </div>
-            
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://looktool.github.io/post/something-else/">
-                  <h3 class="post-title">
-                    something else
-                  </h3>
-                </a>
-              </div>
-            
-
-            
-
           </div>
-
         </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://looktool.github.io/post/something-else/">
+              <h3 class="post-title">
+                下一篇：something else
+              </h3>
+            </a>
+          </div>
+          
       </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">The Last But Not The Least</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Auto by <a href="http://wpa.qq.com/msgrd?v=3&uin=1684182365&site=qq&menu=yes" target="_blank">1684182365</a> | <a class="rss" href="https://looktool.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
     </div>
+    <script type="application/javascript">
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script type="application/javascript">
-
-AOS.init();
+hljs.initHighlightingOnLoad()
 
 var app = new Vue({
   el: '#app',
@@ -174,13 +177,6 @@ var app = new Vue({
 })
 
 </script>
-
-
-  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>
-    hljs.initHighlightingOnLoad()
-  </script>
-
 
 
 
