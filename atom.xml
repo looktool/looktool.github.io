@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://looktool.github.io</id>
     <title>looktool</title>
-    <updated>2022-06-16T09:32:35.523Z</updated>
+    <updated>2022-06-16T09:40:56.739Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://looktool.github.io"/>
     <link rel="self" href="https://looktool.github.io/atom.xml"/>
@@ -10,13 +10,6 @@
     <logo>https://looktool.github.io/images/avatar.png</logo>
     <icon>https://looktool.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, looktool</rights>
-    <entry>
-        <title type="html"><![CDATA[000]]></title>
-        <id>https://looktool.github.io/post/000/</id>
-        <link href="https://looktool.github.io/post/000/">
-        </link>
-        <updated>2022-05-07T14:08:08.000Z</updated>
-    </entry>
     <entry>
         <title type="html"><![CDATA[C_GAME_SNAKE]]></title>
         <id>https://looktool.github.io/post/c_game_snake/</id>
