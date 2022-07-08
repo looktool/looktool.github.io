@@ -1,9 +1,11 @@
+
+<!DOCTYPE html>
 <html>
   <head>
     
 <meta charset="utf-8" >
 
-<title>looktool</title>
+<title>MyQR for Python | looktool</title>
 <meta name="description" content="The Last But Not The Least">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -81,98 +83,59 @@
 </transition>
 
 
-        <div class="content-container">
+      <div class="content-container">
+        <div class="post-detail">
           
-          
+          <h2 class="post-title">MyQR for Python</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2022-07-08</span>
+            
+          </div>
+          <div class="post-content">
+            <pre><code class="language-python"># !/usr/bin/env python
+# -*- coding:utf-8 -*-
+# @FileName  : testMyQR.py
+# @Time      : 2021/6/19 12:47
+# @Author    : 鲸落
 
-<div class="archives-container">
-  
-    <h2 class="year">2022</h2>
-    
-      
-        <article class="post">
-          <a href="https://looktool.github.io/post/myqr-for-python/">
-            <h2 class="post-title">
-              MyQR for Python
-              <small>2022-07-08</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://looktool.github.io/post/reptile-by-python/">
-            <h2 class="post-title">
-              Reptile by Python
-              <small>2022-07-08</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://looktool.github.io/post/sqlite-python/">
-            <h2 class="post-title">
-              SQLite With Python
-              <small>2022-07-08</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://looktool.github.io/post/c_game_snake/">
-            <h2 class="post-title">
-              C_GAME_SNAKE
-              <small>2022-01-17</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://looktool.github.io/post/something-else/">
-            <h2 class="post-title">
-              something else
-              <small>2022-01-15</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://looktool.github.io/post/win32-sdk-ji-chu/">
-            <h2 class="post-title">
-              Win32 SDK 基础
-              <small>2022-01-12</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://looktool.github.io/post/tips/">
-            <h2 class="post-title">
-              Tips
-              <small>2022-01-08</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-  
-</div>
+from MyQR import myqr
 
+picture = r'E:\Image_Web\001 (95).jpg'
+url = r'https://www.yuque.com/wangruiji-vlxah/_myblog/wt0yd1'
+name = r'myQRcode.png'
+words = r'I LOVE YOU'
 
+if __name__ == &quot;__main__&quot;:
+    myqr.run(
+        words=url,            # 文字或链接
+        picture=picture,      # 图片路径
+        save_name=name,       # 文件名
+        colorized=True,       # 色彩
+        version=5,            # 容错率
+        level='H',            # 纠错水平
+        # contrast=1.0,       # 图片的对比度
+        # brightness=1.0,     # 图片亮度
+        # save_dir=r'',       # 生成二维码路径
+    )
+</code></pre>
+
+          </div>
         </div>
 
-        <div class="site-footer">
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://looktool.github.io/post/reptile-by-python/">
+              <h3 class="post-title">
+                下一篇：Reptile by Python
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
   <div class="slogan">The Last But Not The Least</div>
   <div class="social-container">
     
@@ -191,8 +154,8 @@
 </div>
 
 
-      </div>
-      <script type="application/javascript">
+    </div>
+    <script type="application/javascript">
 
 hljs.initHighlightingOnLoad()
 
@@ -208,6 +171,5 @@ var app = new Vue({
 
 
 
-    </div>
   </body>
 </html>
