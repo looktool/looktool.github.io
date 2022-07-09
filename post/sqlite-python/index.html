@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>SQLite With Python | looktool</title>
-<link rel="shortcut icon" href="https://looktool.github.io/favicon.ico?v=1657328618981">
+<link rel="shortcut icon" href="https://looktool.github.io/favicon.ico?v=1657328943584">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://looktool.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="SQLite With Python | looktool - Atom Feed" href="https://looktool.github.io/atom.xml">
@@ -27,7 +27,7 @@ def connect2sql(dbname):
       <div class="main-content">
         <div class="site-header">
   <a href="https://looktool.github.io">
-  <img class="avatar" src="https://looktool.github.io/images/avatar.png?v=1657328618981" alt="">
+  <img class="avatar" src="https://looktool.github.io/images/avatar.png?v=1657328943584" alt="">
   </a>
   <h1 class="site-title">
     looktool
@@ -156,9 +156,9 @@ def insert2sql(dbname):
     conn.commit()
     print(f'[INFO]: insert into &quot;{dbname}&quot;, successfully.')
 
-def close2sql(name):
+def close2sql(dbname):
     conn.close()
-    print(f'[INFO]: close to &quot;{name}&quot;, successfully.')
+    print(f'[INFO]: close to &quot;{dbname}&quot;, successfully.')
 
 if name == 'main':
     dbname = 'mytest.db'
