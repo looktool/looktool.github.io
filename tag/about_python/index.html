@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>SQLite With Python | looktool</title>
+<title>python | looktool</title>
 <meta name="description" content="The Last But Not The Least">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -84,107 +84,88 @@
 
 
       <div class="content-container">
-        <div class="post-detail">
-          
-          <h2 class="post-title">SQLite With Python</h2>
-          <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2022-07-08</span>
-            
-              <span>
-                <i class="icon-pricetags-outline"></i>
-                
-                  <a href="https://looktool.github.io/tag/CatrtbOTU/">
-                    pyton
-                    
-                      ，
-                    
-                  </a>
-                
-                  <a href="https://looktool.github.io/tag/LEARN_N/">
-                    learn
-                    
-                  </a>
-                
-              </span>
-            
-          </div>
-          <div class="post-content">
-            <h1 id="这是一个示例-python-脚本">这是一个示例 Python 脚本。</h1>
-<pre><code class="language-python">import sqlite3
-from sqlite3 import Error
 
-def connect2sql(dbname):
-    try:
-        con = sqlite3.connect(&quot;mytest.db&quot;)
-        print(f'[INFO]: connect to &quot;{dbname}&quot;, successfully.')
-        return con
-    except Error:
-        print(Error)
-    finally:
-        pass
-
-def init_table(dbname):
-    sqlstr = '''
-             Create Table employees(
-             eid integer PRIMARY KEY,
-             ename text,
-             esalary real,
-             department text,
-             position text,
-             hireDate text
-             )
-             '''
-    sqlcursor = conn.cursor()
-    sqlcursor.execute(sqlstr)
-    conn.commit()
-    print(f'[INFO]: create &quot;{dbname}&quot;, successfully.')
-
-def insert2sql(dbname):
-    print(f'[INFO]: input employees name: ')
-    ename = input()
-    sqlstr = '''
-             insert into employees values (
-             190206322,
-             &quot;{0}&quot;,
-             3570,
-             &quot;major&quot;,
-             &quot;relax&quot;,
-             &quot;2019.07.11&quot;
-             )
-             '''.format(ename)
-    sqlcursor = conn.cursor()
-    sqlcursor.execute(sqlstr)
-    conn.commit()
-    print(f'[INFO]: insert into &quot;{dbname}&quot;, successfully.')
-
-def close2sql(name):
-    conn.close()
-    print(f'[INFO]: close to &quot;{name}&quot;, successfully.')
-
-if name == 'main':
-    dbname = 'mytest.db'
-    conn = connect2sql(dbname)
-    init_table(dbname)  # create table once
-    insert2sql(dbname)
-    close2sql(dbname)
-
-</code></pre>
-
-          </div>
+        <div class="current-tag-container">
+          <h2 class="title">
+            <i class="icon icon-pricetags-outline"></i> python
+          </h2> 
         </div>
 
         
-          <div class="next-post">
-            <a class="purple-link" href="https://looktool.github.io/post/c_game_snake/">
-              <h3 class="post-title">
-                下一篇：C_GAME_SNAKE
-              </h3>
-            </a>
-          </div>
-          
+<section class="post-item">
+    <div class="content">
+      <a href="https://looktool.github.io/post/reptile-by-python/">
+        <h2 class="post-title">Reptile by Python</h2>
+      </a>
+      <div class="post-abstract">
+        
       </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2022-07-08</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://looktool.github.io/tag/about_python/">
+                python
+                
+                  ，
+                
+              </a>
+            
+              <a href="https://looktool.github.io/tag/LEARN_N/">
+                learn
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
 
-      
+<section class="post-item">
+    <div class="content">
+      <a href="https://looktool.github.io/post/myqr-for-python/">
+        <h2 class="post-title">MyQR for Python</h2>
+      </a>
+      <div class="post-abstract">
+        
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2020-07-08</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://looktool.github.io/tag/about_python/">
+                python
+                
+                  ，
+                
+              </a>
+            
+              <a href="https://looktool.github.io/tag/LEARN_N/">
+                learn
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+
+<div class="pagination-container">
+  
+  
+</div>
+
+
+      </div>
 
       <div class="site-footer">
   <div class="slogan">The Last But Not The Least</div>
