@@ -1,309 +1,64 @@
-
 <html>
   <head>
-    
-<meta charset="utf-8" >
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>looktool</title>
-<meta name="description" content="The Last But Not The Least">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://looktool.github.io/favicon.ico?v=1657328256815">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://looktool.github.io/favicon.ico?v=1657328459229">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://looktool.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="looktool - Atom Feed" href="https://looktool.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-
-
+    <meta name="description" content="The Last But Not The Least" />
   </head>
   <body>
-    <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://looktool.github.io">
-        <img class="avatar" src="https://looktool.github.io/images/avatar.png?v=1657328256815" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://looktool.github.io">
-        <h1 class="site-title">looktool</h1>
-      </a>
-    </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://looktool.github.io">
+  <img class="avatar" src="https://looktool.github.io/images/avatar.png?v=1657328459229" alt="">
+  </a>
+  <h1 class="site-title">
+    looktool
+  </h1>
+  <p class="site-description">
+    The Last But Not The Least
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="https://looktool.github.io" class="menu">
+          Beta4.0
+        </a>
+      
+    
   </div>
-</div>
-
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
-      
-        
-          <a href="/" class="menu purple-link">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="menu purple-link">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="menu purple-link">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="menu purple-link">
-            关于
-          </a>
-        
-      
-        
-          <a href="https://looktool.github.io" class="menu purple-link">
-            Beta4.0
-          </a>
-        
-      
-    </div>
-  </div>
-</transition>
-
-
-      <div class="content-container">
-        
-        
-<section class="post-item">
-    <div class="content">
-      <a href="https://looktool.github.io/post/tips/">
-        <h2 class="post-title">Tips</h2>
-      </a>
-      <div class="post-abstract">
-        
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2020-04-05</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://looktool.github.io/tag/VLOG_G/">
-                Vlog
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-      <a href="https://looktool.github.io/post/tips/">
-        <div class="feature-container" style="background-image: url('https://looktool.github.io/post-images/tips.png')">
-        </div>
-      </a>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://looktool.github.io/post/reptile-by-python/">
-        <h2 class="post-title">Reptile by Python</h2>
-      </a>
-      <div class="post-abstract">
-        
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2022-07-08</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://looktool.github.io/tag/about_python/">
-                python
-                
-                  ，
-                
-              </a>
-            
-              <a href="https://looktool.github.io/tag/LEARN_N/">
-                learn
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://looktool.github.io/post/sqlite-python/">
-        <h2 class="post-title">SQLite With Python</h2>
-      </a>
-      <div class="post-abstract">
-        
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2022-07-08</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://looktool.github.io/tag/CatrtbOTU/">
-                pyton
-                
-                  ，
-                
-              </a>
-            
-              <a href="https://looktool.github.io/tag/LEARN_N/">
-                learn
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://looktool.github.io/post/c_game_snake/">
-        <h2 class="post-title">C_GAME_SNAKE</h2>
-      </a>
-      <div class="post-abstract">
-        
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2021-01-17</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://looktool.github.io/tag/VLOG_G/">
-                Vlog
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://looktool.github.io/post/something-else/">
-        <h2 class="post-title">something else</h2>
-      </a>
-      <div class="post-abstract">
-        
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2021-01-15</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://looktool.github.io/tag/VLOG_G/">
-                Vlog
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://looktool.github.io/post/win32-sdk-ji-chu/">
-        <h2 class="post-title">Win32 SDK 基础</h2>
-      </a>
-      <div class="post-abstract">
-        
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2021-01-12</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://looktool.github.io/tag/LEARN_N/">
-                learn
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://looktool.github.io/post/myqr-for-python/">
-        <h2 class="post-title">MyQR for Python</h2>
-      </a>
-      <div class="post-abstract">
-        
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2020-07-08</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://looktool.github.io/tag/about_python/">
-                python
-                
-                  ，
-                
-              </a>
-            
-              <a href="https://looktool.github.io/tag/LEARN_N/">
-                learn
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-  </section>
-
-
-<div class="pagination-container">
-  
-  
-</div>
-
-
-      </div>
-
-      <div class="site-footer">
-  <div class="slogan">The Last But Not The Least</div>
   <div class="social-container">
     
       
@@ -317,26 +72,204 @@
       
     
   </div>
-  Auto by <a href="http://wpa.qq.com/msgrd?v=3&uin=1684182365&site=qq&menu=yes" target="_blank">1684182365</a> | <a class="rss" href="https://looktool.github.io/atom.xml" target="_blank">RSS</a>
 </div>
 
+    
+        <div class="post-container">
+  
+    <article class="post">
+      <a href="https://looktool.github.io/post/tips/">
+        <h2 class="post-title">Tips</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2020-04-05
+        </span>
+        <span>
+          1 min read
+        </span>
+        
+          <a href="https://looktool.github.io/tag/VLOG_G/" class="post-tag">
+            # Vlog
+          </a>
+        
+      </div>
+      
+        <a href="https://looktool.github.io/post/tips/" class="post-feature-image" style="background-image: url('https://looktool.github.io/post-images/tips.png')">
+        </a>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://looktool.github.io/post/reptile-by-python/">
+        <h2 class="post-title">Reptile by Python</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2022-07-08
+        </span>
+        <span>
+          1 min read
+        </span>
+        
+          <a href="https://looktool.github.io/tag/about_python/" class="post-tag">
+            # python
+          </a>
+        
+          <a href="https://looktool.github.io/tag/LEARN_N/" class="post-tag">
+            # learn
+          </a>
+        
+      </div>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://looktool.github.io/post/sqlite-python/">
+        <h2 class="post-title">SQLite With Python</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2022-07-08
+        </span>
+        <span>
+          1 min read
+        </span>
+        
+          <a href="https://looktool.github.io/tag/CatrtbOTU/" class="post-tag">
+            # pyton
+          </a>
+        
+          <a href="https://looktool.github.io/tag/LEARN_N/" class="post-tag">
+            # learn
+          </a>
+        
+      </div>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://looktool.github.io/post/c_game_snake/">
+        <h2 class="post-title">C_GAME_SNAKE</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2021-01-17
+        </span>
+        <span>
+          1 min read
+        </span>
+        
+          <a href="https://looktool.github.io/tag/LEARN_N/" class="post-tag">
+            # learn
+          </a>
+        
+      </div>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://looktool.github.io/post/something-else/">
+        <h2 class="post-title">something else</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2021-01-15
+        </span>
+        <span>
+          1 min read
+        </span>
+        
+          <a href="https://looktool.github.io/tag/VLOG_G/" class="post-tag">
+            # Vlog
+          </a>
+        
+      </div>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://looktool.github.io/post/win32-sdk-ji-chu/">
+        <h2 class="post-title">Win32 SDK 基础</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2021-01-12
+        </span>
+        <span>
+          2 min read
+        </span>
+        
+          <a href="https://looktool.github.io/tag/LEARN_N/" class="post-tag">
+            # learn
+          </a>
+        
+      </div>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://looktool.github.io/post/myqr-for-python/">
+        <h2 class="post-title">MyQR for Python</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2020-07-08
+        </span>
+        <span>
+          1 min read
+        </span>
+        
+          <a href="https://looktool.github.io/tag/about_python/" class="post-tag">
+            # python
+          </a>
+        
+          <a href="https://looktool.github.io/tag/LEARN_N/" class="post-tag">
+            # learn
+          </a>
+        
+      </div>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+</div>
 
+    
+        <div class="pagination-container">
+  
+  
+</div>
+
+    
+        <div class="site-footer">
+  Auto by <a href="http://wpa.qq.com/msgrd?v=3&uin=1684182365&site=qq&menu=yes" target="_blank">1684182365</a>
+  <a class="rss" href="https://looktool.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
     </div>
-    <script type="application/javascript">
-
-hljs.initHighlightingOnLoad()
-
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
-
-</script>
-
-
-
-
   </body>
 </html>

@@ -1,108 +1,113 @@
-
-<!DOCTYPE html>
 <html>
   <head>
-    
-<meta charset="utf-8" >
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Win32 SDK 基础 | looktool</title>
-<meta name="description" content="The Last But Not The Least">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://looktool.github.io/favicon.ico?v=1657328256815">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://looktool.github.io/favicon.ico?v=1657328459229">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://looktool.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Win32 SDK 基础 | looktool - Atom Feed" href="https://looktool.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+    <meta name="description" content="一、windows 程序分类
+1、控制台程序
+windows的Dos程序，没有自己的窗口，需要借助Dos窗口进行用户交互，主函数：
+int main()
+{
+    return 0;
+}
 
-
-
+2、windows 窗口程序
+可见的window..." />
+    <meta name="keywords" content="learn" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
   <body>
-    <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://looktool.github.io">
-        <img class="avatar" src="https://looktool.github.io/images/avatar.png?v=1657328256815" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://looktool.github.io">
-        <h1 class="site-title">looktool</h1>
-      </a>
-    </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://looktool.github.io">
+  <img class="avatar" src="https://looktool.github.io/images/avatar.png?v=1657328459229" alt="">
+  </a>
+  <h1 class="site-title">
+    looktool
+  </h1>
+  <p class="site-description">
+    The Last But Not The Least
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="https://looktool.github.io" class="menu">
+          Beta4.0
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
   </div>
 </div>
 
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
-      
-        
-          <a href="/" class="menu purple-link">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="menu purple-link">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="menu purple-link">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="menu purple-link">
-            关于
-          </a>
-        
-      
-        
-          <a href="https://looktool.github.io" class="menu purple-link">
-            Beta4.0
-          </a>
-        
-      
-    </div>
-  </div>
-</transition>
-
-
-      <div class="content-container">
         <div class="post-detail">
-          
-          <h2 class="post-title">Win32 SDK 基础</h2>
-          <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2021-01-12</span>
-            
+          <article class="post">
+            <h2 class="post-title">
+              Win32 SDK 基础
+            </h2>
+            <div class="post-info">
               <span>
-                <i class="icon-pricetags-outline"></i>
-                
-                  <a href="https://looktool.github.io/tag/LEARN_N/">
-                    learn
-                    
-                  </a>
-                
+                2021-01-12
               </span>
+              <span>
+                2 min read
+              </span>
+              
+                <a href="https://looktool.github.io/tag/LEARN_N/" class="post-tag">
+                  # learn
+                </a>
+              
+            </div>
             
-          </div>
-          <div class="post-content">
-            <h2 id="一-windows-程序分类">一、windows 程序分类</h2>
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h2 id="一-windows-程序分类">一、windows 程序分类</h2>
 <h3 id="1-控制台程序">1、控制台程序</h3>
 <p>windows的Dos程序，没有自己的窗口，需要借助Dos窗口进行用户交互，主函数：</p>
 <pre><code class="language-c++">int main()
@@ -164,57 +169,114 @@
 <h3 id="6-windowsh">6、<code>windows.h</code></h3>
 <p>所有<code>windows</code>头文件的集合</p>
 
-          </div>
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E4%B8%80-windows-%E7%A8%8B%E5%BA%8F%E5%88%86%E7%B1%BB">一、windows 程序分类</a>
+<ul>
+<li><a href="#1-%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%A8%8B%E5%BA%8F">1、控制台程序</a></li>
+<li><a href="#2-windows-%E7%AA%97%E5%8F%A3%E7%A8%8B%E5%BA%8F">2、windows 窗口程序</a></li>
+<li><a href="#3-%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93-dll">3、动态链接库 dll</a></li>
+<li><a href="#4-%E9%9D%99%E6%80%81%E5%BA%93%E7%A8%8B%E5%BA%8F-lib">4、静态库程序 lib</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%8C-vc%E4%B8%8B%E7%BC%96%E8%AF%91%E5%B7%A5%E5%85%B7%E5%88%86%E7%B1%BB">二、VC下编译工具分类</a>
+<ul>
+<li><a href="#1-%E7%BC%96%E8%AF%91%E5%99%A8-clexe">1、编译器 CL.exe</a></li>
+<li><a href="#2-%E8%BF%9E%E6%8E%A5%E5%99%A8-linkexe">2、连接器 LINK.exe</a></li>
+<li><a href="#3-%E8%B5%84%E6%BA%90%E7%BC%96%E8%AF%91%E5%99%A8-rcexe">3、资源编译器 RC.exe</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%89-%E5%B8%B8%E8%A7%81%E7%9A%84vc%E7%9A%84%E5%BA%93">三、常见的VC的库</a>
+<ul>
+<li><a href="#1-kernel32dll">1、<code>kernel32.dll</code></a></li>
+<li><a href="#2-user32dll">2、<code>user32.dll</code></a></li>
+<li><a href="#3-gdi32dll">3、<code>gdi32.dll</code></a></li>
+</ul>
+</li>
+<li><a href="#%E5%9B%9B-vc%E4%B8%8B%E6%A0%87%E5%87%86%E7%9A%84%E5%A4%B4%E6%96%87%E4%BB%B6">四、VC下标准的头文件</a>
+<ul>
+<li><a href="#1-windefh">1、<code>windef.h</code></a></li>
+<li><a href="#2-winbaseh">2、<code>winbase.h</code></a></li>
+<li><a href="#3-wingdih">3、<code>wingdi.h</code></a></li>
+<li><a href="#4-winuserh">4、<code>winuser.h</code></a></li>
+<li><a href="#5-winnth">5、<code>winnt.h</code></a></li>
+<li><a href="#6-windowsh">6、<code>windows.h</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
         </div>
 
         
           <div class="next-post">
-            <a class="purple-link" href="https://looktool.github.io/post/myqr-for-python/">
+            <div class="next">下一篇</div>
+            <a href="https://looktool.github.io/post/myqr-for-python/">
               <h3 class="post-title">
-                下一篇：MyQR for Python
+                MyQR for Python
               </h3>
             </a>
           </div>
-          
-      </div>
+        
 
-      
+        
 
-      <div class="site-footer">
-  <div class="slogan">The Last But Not The Least</div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
-  Auto by <a href="http://wpa.qq.com/msgrd?v=3&uin=1684182365&site=qq&menu=yes" target="_blank">1684182365</a> | <a class="rss" href="https://looktool.github.io/atom.xml" target="_blank">RSS</a>
+        <div class="site-footer">
+  Auto by <a href="http://wpa.qq.com/msgrd?v=3&uin=1684182365&site=qq&menu=yes" target="_blank">1684182365</a>
+  <a class="rss" href="https://looktool.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
 </div>
 
-
+      </div>
     </div>
-    <script type="application/javascript">
 
-hljs.initHighlightingOnLoad()
+    <script>
+      hljs.initHighlightingOnLoad()
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
 
-</script>
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
 
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
 
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
 
-
+    </script>
   </body>
 </html>
