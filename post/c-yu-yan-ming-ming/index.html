@@ -1,0 +1,521 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>C语言命名 | looktool</title>
+<link rel="shortcut icon" href="https://looktool.github.io/favicon.ico?v=1657329960607">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://looktool.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="C语言命名 | looktool - Atom Feed" href="https://looktool.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="
+
+命名
+
+
+只要提到代码规范，就不得不说的一个问题。
+
+
+在一些小的演示程序中，也许费尽心思去构思一个 命名 是一件十分傻的行为，但是只要程序上升到你需要严正设计，思考，复查的层次，你就需要好好考虑 命名 这个问题。
+
+
+函数命名：
+
+
+..." />
+    <meta name="keywords" content="learn" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://looktool.github.io">
+  <img class="avatar" src="https://looktool.github.io/images/avatar.png?v=1657329960607" alt="">
+  </a>
+  <h1 class="site-title">
+    looktool
+  </h1>
+  <p class="site-description">
+    The Last But Not The Least
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="https://looktool.github.io" class="menu">
+          Beta4.0
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              C语言命名
+            </h2>
+            <div class="post-info">
+              <span>
+                2022-07-09
+              </span>
+              <span>
+                7 min read
+              </span>
+              
+                <a href="https://looktool.github.io/tag/LEARN_N/" class="post-tag">
+                  # learn
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <ol>
+<li>
+<p><strong>命名</strong></p>
+<ul>
+<li>
+<p>只要提到代码规范，就不得不说的一个问题。</p>
+</li>
+<li>
+<p>在一些小的演示程序中，也许费尽心思去构思一个 <strong>命名</strong> 是一件十分傻的行为，但是只要程序上升到你需要严正设计，思考，复查的层次，你就需要好好考虑 <strong>命名</strong> 这个问题。</p>
+</li>
+<li>
+<p>函数命名：</p>
+<ul>
+<li>
+<p>C语言中，我们可以让下划线或者词汇帮助我们表达函数功能：</p>
+<ol>
+<li>
+<p>前缀：</p>
+<ol>
+<li><code>set</code> 可以表示设置一个参数为某值</li>
+<li><code>get</code> 可以表示获取某一个参数的值</li>
+<li><code>is</code> 可以表示询问是否是这种情况</li>
+</ol>
+</li>
+<li>
+<p>后缀：</p>
+<ol>
+<li>
+<p><code>max/min</code> 可以表示某种操作的最大(小)次数</p>
+</li>
+<li>
+<p><code>cnt</code> 可以表示当前的操作次数</p>
+</li>
+<li>
+<p><code>key</code> 某种关键值</p>
+<pre><code> size_t get_counts(); size_t retry_max(); int    is_empty();
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>需要注意的只是，不要让命名过于赘述其义，只简单保留动作以及目的即可，详细功能可以通过文档来进行进一步的解释。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>结构体命名：</p>
+<ul>
+<li>
+<p>由于结构体的 <strong>标签</strong>，不会污染命名，即标签不在命名搜索范围之内，所以可以放心使用：</p>
+<ol>
+<li>
+<p>有人习惯使用 <code>typedef</code>, 而有人喜欢使用 <code>struct tag obj</code>，后者比较多，但是前者也不失为一种好方法，仁者见仁智者见智。</p>
+<pre><code class="language-c"> /*方法1*/ 
+struct inetaddr_4{  
+    int    port; 
+    char * name; 
+}; 
+struct inetaddr_4 *addr_info; 
+/*方法2*/
+typedef struct _addr{
+    int    port;
+    char * name; 
+}inetaddr_4;
+inetaddr_4 *addr_info_2;    
+</code></pre>
+<p>两者同处一个文件内亦不会发生编译错误。</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>变量命名</p>
+<ul>
+<li>
+<p>所有字符都使用小写</p>
+</li>
+<li>
+<p>含义多的可以用 <code>_</code> 进行辅助</p>
+</li>
+<li>
+<p>以 <code>=</code> 为标准进行对齐</p>
+</li>
+<li>
+<p>类型， 变量名左对齐。</p>
+</li>
+<li>
+<p>等号左右两端，最少有一个空格。</p>
+<pre><code class="language-c">int main(void)
+  {   
+      int          counts = 0;
+      inetaddr_4   *addr    = NULL;    
+      return 0; 
+  }
+</code></pre>
+<p>为了防止指针声明定义时候出错，将 <code>*</code> 紧贴着变量名总不会出错。</p>
+<pre><code class="language-c">  inetaddr_4   *addr, object, *addr_2;
+</code></pre>
+<p>其中 <code>addr</code> 和 <code>addr_2</code> 是指针，而 <code>object</code> 则是一个栈上的完整对象，并不是指针。</p>
+</li>
+<li>
+<p>全局变量能少用就少用，必须要用的情况下，可以考虑添加前缀 <code>g_</code></p>
+<pre><code class="language-c">  int g_counts;
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><code>#define</code> 命名</p>
+<ul>
+<li>
+<p>所有字符都是用大写，并用 <code>_</code> 进行分割</p>
+</li>
+<li>
+<p>如果多于一个语句，使用　<code>do{...}while(0)</code> 进行包裹，防止 <code>;</code> 错误。</p>
+<pre><code class="language-c"> #define SWAP(x, y) \ 
+do{                  \ 
+    x = x + y;        \  
+    y = x - y;        \ 
+    x = x - y;        \  
+  }while(0)
+</code></pre>
+<p>当然这个交换宏实际上有一点缺陷，在大后方会提出。此处是代码规范，就不重复强调。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>enum</code> 命名</p>
+<ul>
+<li>所有字符都是用大写，并用 <code>_</code> 进行分割</li>
+<li>与 <code>define</code> 相比，<code>enum</code>适用于同一类型的常量声明，而不是单一独立的常量。往往出现都是成组。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>格式化代码</strong></p>
+<ul>
+<li>
+<p>花括号 <code>{}</code></p>
+<ul>
+<li>
+<p>混合使用符合节俭思想，但会稍微有一点结构紊乱。</p>
+</li>
+<li>
+<p>单一使用能更好让代码结构清晰。</p>
+</li>
+<li>
+<p>所谓混合，单一指的是是否一直使用 <code>{}</code> 进行代码包裹。</p>
+</li>
+<li>
+<p>有人认为 当单一语句的时候不必要添加 <code>{}</code>，有的人则习惯添加</p>
+</li>
+<li>
+<p>当作用域超过一个屏幕的时候，可以适当的使用注释来指明 <code>{}</code> 作用域</p>
+<pre><code class="language-c">  while(1){   
+      if(tmp == NULL){ 
+          break;     
+      }      
+      else if(fanny == 1){ 
+          // ... 大概超过了一个屏幕的代码     
+      } 
+      /*else if fanny*/  
+  }/*end while*/
+</code></pre>
+<p>如果是代码量少的情况下，但嵌套比较多，也可以使用这个方式进行注释。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>括号 <code>()</code></p>
+<ul>
+<li>
+<p>有人建议除了函数调用以外，在条件语句等类似情况下使用 <code>()</code> 要在关键字后空一格，再接上 <code>()</code>语句，对于这一点，我个人习惯是不空格，但总有这种说法。</p>
+<pre><code class="language-c">  if (space == NULL) {
+      /**TODO**/
+  }  
+while(1){      
+    /**我习惯于如此写**/ 
+}  
+strcpy(str1, str2); 
+/**第一种写法是为了和函数调用写法进行区分**/  
+return 0;
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><code>switch</code></p>
+<ul>
+<li>
+<p>一定要放一个 <code>default</code> 在最后，即使它永远不会用到。</p>
+</li>
+<li>
+<p>每个 <code>case</code> 如果需要使用新变量，可以用 <code>{}</code> 包裹起来，并在里面完成所有操作。</p>
+<pre><code class="language-c">  switch(...)  {  
+      case 1:        
+          /**TODO**/     
+          break;  
+      case 2:      
+          {          
+              int new_vari;    
+              /**创建新变量则用 {} 包裹起来**/ 
+          }      
+          break;   
+      default:       
+          call_error(); 
+  }
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><code>goto</code></p>
+<ul>
+<li>虽然许多人，许多书都提醒不再使用 <code>goto</code> 关键字，而是使用 <code>setjmp</code> 和 <code>longjmp</code>来取代它，但是这还是那句话，仁者见仁智者见智，如果 <code>goto</code> 能够让代码清晰，那何乐而不为呢，这个观点也是最近才体会到的（并非我一己之言）。</li>
+<li>具体使用可以查询官方文档。</li>
+</ul>
+</li>
+<li>
+<p>语句</p>
+<ul>
+<li>应该让完整的语句在每一行中，只出现一次。</li>
+<li>对于变量声明定义亦是如此</li>
+<li>原因是这样能让文档更有针对性</li>
+</ul>
+</li>
+<li>
+<p>头文件保护</p>
+<ul>
+<li>
+<p>对于头文件而言，在一个程序中有可能被多次包含(<code>#include</code>)，如果缺少头文件保护，则会发生编译错误</p>
+</li>
+<li>
+<p>不要将 <code>_</code> 作为宏的开头或者结尾。</p>
+<pre><code>  #ifndef VECTOR_H_INCLUDE      #define VECTOR_H_INCLUDE          /**TODO**/      #endif 
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>宏</strong></p>
+<ul>
+<li>C语言的宏有诸多弊端，所以尽量使用 <code>inline</code> 函数来代替宏。在大后方会有解释</li>
+<li>但是，请不要因此抛弃了宏，比如在 <code>C11</code> 中有一个新兴的宏。</li>
+</ul>
+</li>
+<li>
+<p>变量</p>
+<ul>
+<li>第一时刻初始化所有所声明的变量，因为这么做总没有坏处，而且能减少出错的可能。</li>
+</ul>
+</li>
+<li>
+<p>函数</p>
+<ul>
+<li>函数应该尽可能的短小，一个ANSI屏幕的为最佳。</li>
+</ul>
+</li>
+<li>
+<p>如果某个循环带着空语句，使用 <code>{}</code> 进行挂载，以免出现意外。</p>
+<pre><code> while(*is_end++ != '\0') {     ; }
+</code></pre>
+<p>虽然是空的循环体，但是写出来以免造成误循环。</p>
+</li>
+<li>
+<p>尽量不要让函数返回值直接作为条件语句的判断，这样会极大降低可读性</p>
+<pre><code> if(is_eof(file) == 0)     好过 if(!is_eof(file))
+</code></pre>
+</li>
+<li>
+<p>不要为了方便或者一点点的所谓速度提升(也许根本没有)，而放弃可读性，使用嵌入式的赋值语句</p>
+<pre><code class="language-c">int add = 10; 
+int num = 11; 
+int thr = 20; 
+add = add + thr; 
+num = add + 20;  
+不要写成 num = (add = add + thr) + 20;
+</code></pre>
+</li>
+</ol>
+<h4 id="浮点数">浮点数</h4>
+<ul>
+<li>万万记住不要再使用浮点数比较彼此是否相等或不等。</li>
+<li>如果把浮点数用在离散性的数据上，比如循环计数器，那就等死吧。</li>
+</ul>
+<h4 id="其他">其他</h4>
+<ul>
+<li>
+<p>使用 <code>#if</code> 而不是 <code>#ifdef</code></p>
+</li>
+<li>
+<p>可以使用 <code>define()</code> 来代替 <code>#ifdef</code>的功能</p>
+<pre><code class="language-c">#if !define(USERS_DEFINE)  
+#define USERS_DEFINE ...  #endif
+</code></pre>
+</li>
+<li>
+<p>对于某些大段需要消除的代码，我们不能使用注释 <code>/**/</code>，因为注释不能内嵌着注释(<code>//</code>除外)，我们可以使用黑魔法：</p>
+<pre><code class="language-c">#if NOT_DECLARATION    
+/**想要注释的代码**/  
+#endif
+</code></pre>
+</li>
+<li>
+<p>不要使用纯数字</p>
+<ul>
+<li>意味着，不在使用毫无标记的数字，因为可能你过了几个月再看源代码的时候，你根本不知道这个数字代表着什么</li>
+<li>而应该使用<code>#define</code> 给它一个名字，来说明这个数字的意义。</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E6%B5%AE%E7%82%B9%E6%95%B0">浮点数</a></li>
+<li><a href="#%E5%85%B6%E4%BB%96">其他</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://looktool.github.io/post/cmd-chang-yong-ming-ling/">
+              <h3 class="post-title">
+                cmd 常用命令
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Auto by <a href="http://wpa.qq.com/msgrd?v=3&uin=1684182365&site=qq&menu=yes" target="_blank">1684182365</a>
+  <a class="rss" href="https://looktool.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

@@ -2,23 +2,23 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>SQLite With Python | looktool</title>
+<title>cmd 常用命令 | looktool</title>
 <link rel="shortcut icon" href="https://looktool.github.io/favicon.ico?v=1657329960607">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://looktool.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="SQLite With Python | looktool - Atom Feed" href="https://looktool.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="cmd 常用命令 | looktool - Atom Feed" href="https://looktool.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="这是一个示例 Python 脚本。
-import sqlite3
-from sqlite3 import Error
+    <meta name="description" content="tasklist | findstr &quot;3572&quot;  // 进程查询
 
-def connect2sql(dbname):
-    try:
-        con = sqlite3.conn..." />
-    <meta name="keywords" content="pyton,learn" />
+netstat -ano		// 端口查询
+
+taskkill /f /t /im Tomcat8.exe		// kill
+
+..." />
+    <meta name="keywords" content="learn" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -86,19 +86,15 @@ def connect2sql(dbname):
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              SQLite With Python
+              cmd 常用命令
             </h2>
             <div class="post-info">
               <span>
-                2022-07-08
+                2022-07-09
               </span>
               <span>
                 1 min read
               </span>
-              
-                <a href="https://looktool.github.io/tag/CatrtbOTU/" class="post-tag">
-                  # pyton
-                </a>
               
                 <a href="https://looktool.github.io/tag/LEARN_N/" class="post-tag">
                   # learn
@@ -108,73 +104,16 @@ def connect2sql(dbname):
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <h1 id="这是一个示例-python-脚本">这是一个示例 Python 脚本。</h1>
-<pre><code class="language-python">import sqlite3
-from sqlite3 import Error
-
-def connect2sql(dbname):
-    try:
-        con = sqlite3.connect(&quot;mytest.db&quot;)
-        print(f'[INFO]: connect to &quot;{dbname}&quot;, successfully.')
-        return con
-    except Error:
-        print(Error)
-    finally:
-        pass
-
-def init_table(dbname):
-    sqlstr = '''
-             Create Table employees(
-             eid integer PRIMARY KEY,
-             ename text,
-             esalary real,
-             department text,
-             position text,
-             hireDate text
-             )
-             '''
-    sqlcursor = conn.cursor()
-    sqlcursor.execute(sqlstr)
-    conn.commit()
-    print(f'[INFO]: create &quot;{dbname}&quot;, successfully.')
-
-def insert2sql(dbname):
-    print(f'[INFO]: input employees name: ')
-    ename = input()
-    sqlstr = '''
-             insert into employees values (
-             190206322,
-             &quot;{0}&quot;,
-             3570,
-             &quot;major&quot;,
-             &quot;relax&quot;,
-             &quot;2019.07.11&quot;
-             )
-             '''.format(ename)
-    sqlcursor = conn.cursor()
-    sqlcursor.execute(sqlstr)
-    conn.commit()
-    print(f'[INFO]: insert into &quot;{dbname}&quot;, successfully.')
-
-def close2sql(dbname):
-    conn.close()
-    print(f'[INFO]: close to &quot;{dbname}&quot;, successfully.')
-
-if __name__ == '__main__':
-    dbname = 'mytest.db'
-    conn = connect2sql(dbname)
-    init_table(dbname)  # create table once
-    insert2sql(dbname)
-    close2sql(dbname)
-
+                <pre><code class="language-c">tasklist | findstr &quot;3572&quot;  // 进程查询
+</code></pre>
+<pre><code class="language-c">netstat -ano		// 端口查询
+</code></pre>
+<pre><code class="language-c">taskkill /f /t /im Tomcat8.exe		// kill
 </code></pre>
 
               </div>
               <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li><a href="#%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E7%A4%BA%E4%BE%8B-python-%E8%84%9A%E6%9C%AC">这是一个示例 Python 脚本。</a></li>
-</ul>
-
+                
               </div>
             </div>
           </article>
@@ -183,9 +122,9 @@ if __name__ == '__main__':
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://looktool.github.io/post/c_game_snake/">
+            <a href="https://looktool.github.io/post/reptile-by-python/">
               <h3 class="post-title">
-                C_GAME_SNAKE
+                Reptile by Python
               </h3>
             </a>
           </div>

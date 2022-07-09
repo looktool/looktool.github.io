@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://looktool.github.io</id>
     <title>looktool</title>
-    <updated>2022-07-09T01:09:14.215Z</updated>
+    <updated>2022-07-09T01:27:31.384Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://looktool.github.io"/>
     <link rel="self" href="https://looktool.github.io/atom.xml"/>
@@ -10,6 +10,41 @@
     <logo>https://looktool.github.io/images/avatar.png</logo>
     <icon>https://looktool.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, looktool</rights>
+    <entry>
+        <title type="html"><![CDATA[vim 配置]]></title>
+        <id>https://looktool.github.io/post/vim-pei-zhi/</id>
+        <link href="https://looktool.github.io/post/vim-pei-zhi/">
+        </link>
+        <updated>2022-07-09T01:25:02.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[git 命令]]></title>
+        <id>https://looktool.github.io/post/git-ming-ling/</id>
+        <link href="https://looktool.github.io/post/git-ming-ling/">
+        </link>
+        <updated>2022-07-09T01:23:44.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[gcc 简述]]></title>
+        <id>https://looktool.github.io/post/gcc-jian-shu/</id>
+        <link href="https://looktool.github.io/post/gcc-jian-shu/">
+        </link>
+        <updated>2022-07-09T01:21:29.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C语言命名]]></title>
+        <id>https://looktool.github.io/post/c-yu-yan-ming-ming/</id>
+        <link href="https://looktool.github.io/post/c-yu-yan-ming-ming/">
+        </link>
+        <updated>2022-07-09T01:19:49.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[cmd 常用命令]]></title>
+        <id>https://looktool.github.io/post/cmd-chang-yong-ming-ling/</id>
+        <link href="https://looktool.github.io/post/cmd-chang-yong-ming-ling/">
+        </link>
+        <updated>2022-07-09T01:11:25.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Reptile by Python]]></title>
         <id>https://looktool.github.io/post/reptile-by-python/</id>
@@ -44,19 +79,5 @@
         <link href="https://looktool.github.io/post/win32-sdk-ji-chu/">
         </link>
         <updated>2021-01-12T11:04:08.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[MyQR for Python]]></title>
-        <id>https://looktool.github.io/post/myqr-for-python/</id>
-        <link href="https://looktool.github.io/post/myqr-for-python/">
-        </link>
-        <updated>2020-07-08T10:28:46.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Tips]]></title>
-        <id>https://looktool.github.io/post/tips/</id>
-        <link href="https://looktool.github.io/post/tips/">
-        </link>
-        <updated>2020-04-05T06:49:38.000Z</updated>
     </entry>
 </feed>

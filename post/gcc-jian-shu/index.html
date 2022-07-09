@@ -2,23 +2,22 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>SQLite With Python | looktool</title>
+<title>gcc 简述 | looktool</title>
 <link rel="shortcut icon" href="https://looktool.github.io/favicon.ico?v=1657329960607">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://looktool.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="SQLite With Python | looktool - Atom Feed" href="https://looktool.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="gcc 简述 | looktool - Atom Feed" href="https://looktool.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="这是一个示例 Python 脚本。
-import sqlite3
-from sqlite3 import Error
-
-def connect2sql(dbname):
-    try:
-        con = sqlite3.conn..." />
-    <meta name="keywords" content="pyton,learn" />
+    <meta name="description" content="1.gcc工作流程
+1.1 预处理 -E
+所作的内容有：宏替换、头文件展开、去掉注释
+xxx.c文件 -&gt; xxx.i文件(.i文件还是c文件)
+gcc -E hello.c &gt; pianoapan.txt // 文件流重定向
+..." />
+    <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -86,95 +85,108 @@ def connect2sql(dbname):
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              SQLite With Python
+              gcc 简述
             </h2>
             <div class="post-info">
               <span>
-                2022-07-08
+                2022-07-09
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
-              
-                <a href="https://looktool.github.io/tag/CatrtbOTU/" class="post-tag">
-                  # pyton
-                </a>
-              
-                <a href="https://looktool.github.io/tag/LEARN_N/" class="post-tag">
-                  # learn
-                </a>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <h1 id="这是一个示例-python-脚本">这是一个示例 Python 脚本。</h1>
-<pre><code class="language-python">import sqlite3
-from sqlite3 import Error
-
-def connect2sql(dbname):
-    try:
-        con = sqlite3.connect(&quot;mytest.db&quot;)
-        print(f'[INFO]: connect to &quot;{dbname}&quot;, successfully.')
-        return con
-    except Error:
-        print(Error)
-    finally:
-        pass
-
-def init_table(dbname):
-    sqlstr = '''
-             Create Table employees(
-             eid integer PRIMARY KEY,
-             ename text,
-             esalary real,
-             department text,
-             position text,
-             hireDate text
-             )
-             '''
-    sqlcursor = conn.cursor()
-    sqlcursor.execute(sqlstr)
-    conn.commit()
-    print(f'[INFO]: create &quot;{dbname}&quot;, successfully.')
-
-def insert2sql(dbname):
-    print(f'[INFO]: input employees name: ')
-    ename = input()
-    sqlstr = '''
-             insert into employees values (
-             190206322,
-             &quot;{0}&quot;,
-             3570,
-             &quot;major&quot;,
-             &quot;relax&quot;,
-             &quot;2019.07.11&quot;
-             )
-             '''.format(ename)
-    sqlcursor = conn.cursor()
-    sqlcursor.execute(sqlstr)
-    conn.commit()
-    print(f'[INFO]: insert into &quot;{dbname}&quot;, successfully.')
-
-def close2sql(dbname):
-    conn.close()
-    print(f'[INFO]: close to &quot;{dbname}&quot;, successfully.')
-
-if __name__ == '__main__':
-    dbname = 'mytest.db'
-    conn = connect2sql(dbname)
-    init_table(dbname)  # create table once
-    insert2sql(dbname)
-    close2sql(dbname)
-
+                <p>1.gcc工作流程<br>
+1.1 预处理 -E<br>
+所作的内容有：宏替换、头文件展开、去掉注释<br>
+xxx.c文件 -&gt; xxx.i文件(.i文件还是c文件)</p>
+<pre><code class="language-c">gcc -E hello.c &gt; pianoapan.txt // 文件流重定向
+gcc -E hello.c | more 
 </code></pre>
+<p>​    1.2 编译 -S  最浪费时间的<br>
+​        xxx.i -&gt; xxx.s(.s是汇编文件)</p>
+<pre><code>gcc -S hello.c 
+</code></pre>
+<p>​    1.3 汇编 -c<br>
+​        xxx.s -&gt; xxx.o(.o是二进制文件)</p>
+<pre><code>gcc -c hello.c 
+</code></pre>
+<p>​    1.4 链接<br>
+​        xxx.o -&gt; xxx(可执行文件)</p>
+<pre><code>
+</code></pre>
+<p>2.gcc常用参数<br>
+2.1 -v / --version    //查看编译器版本<br>
+2.2 -I   //指定头文件的路劲<br>
+2.3 -c   //将汇编文件生成二进制文件<br>
+2.4 -o   //指定生成文件的名字<br>
+2.5 -d   //gdb调试的时候需要加的参数<br>
+2.6 -D   //编译的时候指定宏<br>
+2.7 -Wall //添加警告信息<br>
+2.8 -On   优化，n是优化级别</p>
+<ul>
+<li>
+<p>ansi只支持 ANSI 标准的 C 语法。这一选项将禁止 GNU C 的某些特色， 例如 asm 或 typeof 关键词。</p>
+</li>
+<li>
+<p>c只编译并生成目标文件。</p>
+</li>
+<li>
+<p>DMACRO以字符串&quot;1&quot;定义 MACRO 宏。</p>
+</li>
+<li>
+<p>DMACRO=DEFN以字符串&quot;DEFN&quot;定义 MACRO 宏。</p>
+</li>
+<li>
+<p>E只运行 C 预编译器。</p>
+</li>
+<li>
+<p>g生成调试信息。GNU 调试器可利用该信息。</p>
+</li>
+<li>
+<p>IDIRECTORY指定额外的头文件搜索路径DIRECTORY。</p>
+</li>
+<li>
+<p>LDIRECTORY指定额外的函数库搜索路径DIRECTORY。</p>
+</li>
+<li>
+<p>lLIBRARY连接时搜索指定的函数库LIBRARY。-m486针对 486 进行代码优化。</p>
+</li>
+<li>
+<p>o FILE生成指定的输出文件。用在生成可执行文件时。</p>
+</li>
+<li>
+<p>O0不进行优化处理。</p>
+</li>
+<li>
+<p>O 或 -O1优化生成代码。</p>
+</li>
+<li>
+<p>O2进一步优化。-O3比 -O2 更进一步优化，包括 inline 函数。</p>
+</li>
+<li>
+<p>shared生成共享目标文件。通常用在建立共享库时。</p>
+</li>
+<li>
+<p>static禁止使用共享连接。</p>
+</li>
+<li>
+<p>UMACRO取消对 MACRO 宏的定义。</p>
+</li>
+<li>
+<p>w不生成任何警告信息。</p>
+</li>
+<li>
+<p>Wall生成所有警告信息。</p>
+</li>
+</ul>
 
               </div>
               <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li><a href="#%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E7%A4%BA%E4%BE%8B-python-%E8%84%9A%E6%9C%AC">这是一个示例 Python 脚本。</a></li>
-</ul>
-
+                
               </div>
             </div>
           </article>
@@ -183,9 +195,9 @@ if __name__ == '__main__':
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://looktool.github.io/post/c_game_snake/">
+            <a href="https://looktool.github.io/post/c-yu-yan-ming-ming/">
               <h3 class="post-title">
-                C_GAME_SNAKE
+                C语言命名
               </h3>
             </a>
           </div>
